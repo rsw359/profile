@@ -27,6 +27,8 @@
 		"ts-node": "^10.9.2"
 	},
 	"devDependencies": {
+		"@iconify/icons-logos": "^1.2.36",
+		"@iconify/react": "^4.1.1",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",

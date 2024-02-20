@@ -28,6 +28,7 @@ export default function Home() {
         <div className="flex justify-center">
           <Image
             src={profilepic}
+            priority={true}
             alt="my profile pic"
             height={300}
             width={300}
