@@ -10,20 +10,15 @@ import iro from "@/assets/iro.png";
 import yourspace from "@/assets/yourspace.png";
 import romance from "@/assets/romance.png";
 import Link from "next/link";
-import Modal from "@/components/Modal";
+import RomanceModal from "@/components/Romance-Modal";
+import Carousel from "@/components/Carousel";
 
 export default function Skills() {
   return (
     <>
-      <Modal title="IRO IRO">
+      <RomanceModal title="The Romance Cycling Blog">
         <div className="flex items-center justify-center rounded-md pb-2">
-          <Image
-            src={romance}
-            width={500}
-            height={500}
-            className="justify-center"
-            alt="my pic"
-          />
+          <Carousel />
         </div>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
@@ -31,7 +26,7 @@ export default function Skills() {
           voluptatibus vel, placeat explicabo exercitationem id officia laborum
           doloremque blanditiis earum accusamus.
         </p>
-      </Modal>
+      </RomanceModal>
 
       <section>
         <div className="m-3 space-y-16 rounded-3xl bg-gradient-to-b from-gray-500 to-gray-800 bg-center bg-no-repeat px-8 py-8">
@@ -108,17 +103,16 @@ export default function Skills() {
             {/* the Romance */}
             <div className="flex h-48 w-48 flex-col items-center">
               <div className="relative h-3/4 w-full transform rounded-3xl transition-transform duration-200 hover:scale-110">
-                <Link href="/skills?showModal=1">
+                <Link href="/skills?showModal=1" scroll={false}>
                   <Image
                     src={romance}
                     alt="the romance screenshot"
-                    fill
-                    className="rounded-2xl"
+                    className="w-42 h-32 rounded-2xl"
                     sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
                   />
                 </Link>
               </div>
-              <p className="font-semibold text-black">
+              <p className="text-center font-semibold text-black">
                 the<span className="text-gray-400">Romance</span>
               </p>
             </div>
@@ -128,8 +122,7 @@ export default function Skills() {
                 <Image
                   src={iro}
                   alt="iro iro screenshot"
-                  fill
-                  className="rounded-2xl"
+                  className="w-42 h-32 rounded-2xl"
                   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
                 />
               </div>
@@ -146,8 +139,7 @@ export default function Skills() {
                 <Image
                   src={yourspace}
                   alt="yourspace screenshot"
-                  fill
-                  className="rounded-2xl"
+                  className="w-42 h-32 rounded-2xl"
                   sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
                 />
               </div>

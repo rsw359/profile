@@ -9,7 +9,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function Modal({ title, children }: Props) {
+export default function RomanceModal({ title, children }: Props) {
   const searchParams = useSearchParams();
   const modalRef = useRef<null | HTMLDialogElement>(null);
   const showModal = searchParams.get("showModal");
@@ -35,7 +35,7 @@ export default function Modal({ title, children }: Props) {
         <div className="max-w-fullbg-gray-200 flex w-[500px] flex-col">
           <div className="mb-4 flex flex-row justify-between bg-gray-400 px-5 pt-2 dark:bg-slate-600">
             <h1 className="text-2xl">{title}</h1>
-            <Link href="/skills">
+            <Link href="/skills" scroll={false}>
               <button
                 onClick={closeModal}
                 className="mb-2 flex h-6 w-6 cursor-pointer items-center justify-center rounded border-none bg-red-600 px-2 py-1 font-bold text-white dark:text-gray-700"
