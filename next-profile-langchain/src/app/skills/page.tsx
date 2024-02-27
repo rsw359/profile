@@ -7,18 +7,22 @@ import { Icon } from "@iconify/react";
 import profilepic from "@/assets/smile.jpeg";
 import Image from "next/image";
 import iro from "@/assets/iro.png";
-import yourspace from "@/assets/yourspace.png";
+import coffee from "@/assets/coffee2.png";
 import romance from "@/assets/romance.png";
 import Link from "next/link";
-import RomanceModal from "@/components/Romance-Modal";
-import Carousel from "@/components/Carousel";
+import RomanceModal from "@/components/modals/Romance-Modal";
+import IroModal from "@/components/modals/Iro-Modal";
+import DataModal from "@/components/modals/Data-Modal";
+import DataCarousel from "@/components/carousels/Data-Carousel";
+import RomanceCarousel from "@/components/carousels/Romance-Carousel";
+import IroCarousel from "@/components/carousels/Iro-Carousel";
 
 export default function Skills() {
   return (
     <>
       <RomanceModal title="The Romance Cycling Blog">
         <div className="flex items-center justify-center rounded-md pb-2">
-          <Carousel />
+          <RomanceCarousel />
         </div>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
@@ -27,6 +31,29 @@ export default function Skills() {
           doloremque blanditiis earum accusamus.
         </p>
       </RomanceModal>
+
+      <IroModal title="Iro Iro Colorizer">
+        <div className="flex items-center justify-center rounded-md pb-2">
+          <IroCarousel />
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+          eligendi odio ipsa nostrum dolores voluptas architecto tempore nulla
+          voluptatibus vel, placeat explicabo exercitationem id officia laborum
+          doloremque blanditiis earum accusamus.
+        </p>
+      </IroModal>
+      <DataModal title="Iro Iro Colorizer">
+        <div className="flex items-center justify-center rounded-md pb-2">
+          <DataCarousel />
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+          eligendi odio ipsa nostrum dolores voluptas architecto tempore nulla
+          voluptatibus vel, placeat explicabo exercitationem id officia laborum
+          doloremque blanditiis earum accusamus.
+        </p>
+      </DataModal>
 
       <section>
         <div className="m-3 space-y-16 rounded-3xl bg-gradient-to-b from-gray-500 to-gray-800 bg-center bg-no-repeat px-8 py-8">
@@ -119,12 +146,14 @@ export default function Skills() {
             {/*iro iro colorizer */}
             <div className="flex h-48 w-48 flex-col items-center">
               <div className="relative h-3/4 w-full transform rounded-3xl  transition-transform duration-200 hover:scale-110">
-                <Image
-                  src={iro}
-                  alt="iro iro screenshot"
-                  className="w-42 h-32 rounded-2xl"
-                  sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
-                />
+                <Link href="/skills?showModal=2" scroll={false}>
+                  <Image
+                    src={iro}
+                    alt="iro iro screenshot"
+                    className="w-42 h-32 rounded-2xl"
+                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
+                  />
+                </Link>
               </div>
 
               <div className="flex w-full flex-col items-center">
@@ -136,15 +165,17 @@ export default function Skills() {
             {/*yourspace */}
             <div className="flex h-48 w-48 flex-col items-center">
               <div className="relative h-3/4 w-full transform rounded-3xl  transition-transform duration-200 hover:scale-110">
-                <Image
-                  src={yourspace}
-                  alt="yourspace screenshot"
-                  className="w-42 h-32 rounded-2xl"
-                  sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
-                />
+                <Link href="/skills?showModal=3" scroll={false}>
+                  <Image
+                    src={coffee}
+                    alt="data screenshot"
+                    className="w-42 h-32 rounded-2xl"
+                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
+                  />
+                </Link>
               </div>
               <p className="font-semibold text-black">
-                Your<span className="text-gray-400">Space</span>
+                Data<span className="text-gray-400">Projects</span>
               </p>
             </div>
           </div>

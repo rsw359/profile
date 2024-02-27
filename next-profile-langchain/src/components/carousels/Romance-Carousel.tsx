@@ -9,7 +9,7 @@ const images = [
   { src: romance2, alt: "romance2" },
 ];
 
-export default function Carousel() {
+export default function RomanceCarousel() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const previousImage = () => {
